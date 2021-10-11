@@ -154,7 +154,7 @@ def main_manual_predict(PHRASE=None, prediction_mode='Manualpart1'):
     labels, vocab_idx, vocab_size, PAD_IDX, UNK_IDX, pretrained_embeddings, classes = data_handler_test.data_loader()
 
     # Initialize prediction
-    predictor = Prediction(cfg_path, model_mode=MODEL_MODE)
+    predictor = Prediction(cfg_path, classes=classes, model_mode=MODEL_MODE)
     predictor.setup_model(model=biLSTM, vocab_size=vocab_size, embedding_dim=EMBEDDING_DIM, hidden_dim=HIDDEN_DIM,
                           embeddings=pretrained_embeddings, pad_idx=PAD_IDX, unk_idx=UNK_IDX)
     # Execute Prediction
