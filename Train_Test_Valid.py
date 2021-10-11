@@ -466,7 +466,12 @@ class Prediction:
                 torch.load(self.params_RNN['network_output_path'] + "/epoch" + str(43) + "_" + model_file_name_r))
         else:
             # self.model_p.load_state_dict(torch.load(self.params['network_output_path'] + "/" + model_file_name))
-            self.model_p.load_state_dict(torch.load(self.params['network_output_path'] + "/epoch" + str(epoch) + "_" + model_file_name))
+            self.model_p.load_state_dict(
+                torch.load(
+                    self.params['network_output_path'] + "/epoch" + str(epoch) + "_" + model_file_name,
+                    map_location=torch.device('cpu') # we don't have a GPU that supports CUDA
+                )
+            )
 
 
     def predict(self, test_loader, batch_size):
