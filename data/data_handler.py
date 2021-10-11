@@ -9,7 +9,9 @@ https://tayebiarasteh.com/
 import numpy as np
 import random
 import torch
-from torchtext import data
+# see https://stackoverflow.com/questions/66516388/attributeerror-module-torchtext-data-has-no-attribute-field
+#from torchtext import data
+from torchtext.legacy import data
 from Train_Test_Valid import Mode
 from configs.serde import read_config
 import os
