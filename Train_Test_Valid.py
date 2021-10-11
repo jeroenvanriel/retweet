@@ -667,10 +667,12 @@ class Prediction:
 
 
     def manual_predict(self, labels, vocab_idx, phrase, min_len=4,
-                       tokenizer=spacy.load('en'), mode=None, prediction_mode='Manualpart1'):
+                       tokenizer=spacy.load('en_core_web_sm'), mode=None, prediction_mode='Manualpart1'):
         '''
         Manually predicts the polarity of the given sentence.
         Possible polarities: 1.neutral, 2.positive, 3.negative
+
+        (spaCy model 'en' has become 'en_core_web_sm')
         '''
         self.params = read_config(self.cfg_path)
         self.model_p.eval()
