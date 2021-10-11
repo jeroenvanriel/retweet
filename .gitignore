@@ -4,6 +4,10 @@
 /.idea/modules.xml
 /.idea/twitter-sentiment.iml
 /.idea/vcs.xml
+
+.vscode/**
+.python-version
+
 /Very useful tutorials/emotion_analysis_elastic_pytorch-master/.gitignore
 /__pycache__/Training.cpython-37.pyc
 /configs/__pycache__/__init__.cpython-37.pyc
