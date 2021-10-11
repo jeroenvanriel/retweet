@@ -1,6 +1,7 @@
 name: SentimentAnalysis
 
 channels:
+  - pytorch
   - conda-forge
 
 dependencies:
@@ -11,7 +12,7 @@ dependencies:
   - jupyter
   - cython
   - pip
-  - torch
+  - pytorch
   - torchvision
   - torchtext
 
