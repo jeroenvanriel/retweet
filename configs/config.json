@@ -18,7 +18,7 @@
   "final_test_post_reply_file_name": "final_test_post_reply.csv",
   "data_format": "tsv",
   "reply_data_format": "csv",
-  "pretrained_embedding": "glove.twitter.27B.200d",
+  "pretrained_embedding": "glove.twitter.27B.25d",
   "tokenizer": "spacy",
   "network_output_path": "./data/network_data/",
   "output_data_path": "./data/output_data/",

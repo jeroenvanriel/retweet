@@ -34,7 +34,7 @@ def main_train():
     '''Main function for training + validation.'''
 
     # if we are resuming training on a model
-    RESUME = True
+    RESUME = False
 
     # Hyper-parameters
     NUM_EPOCH = 100
@@ -44,14 +44,14 @@ def main_train():
     MAX_VOCAB_SIZE = 50000 #max_vocab_size: takes the 100,000 most frequent words as the vocab
     lr = 1e-4
     optimiser_params = {'lr': lr, 'weight_decay': 1e-5}
-    EMBEDDING_DIM = 200
-    HIDDEN_DIM = 256  # for the LSTM model:
+    EMBEDDING_DIM = 25
+    HIDDEN_DIM = 32  # for the LSTM model:
     OUTPUT_DIM = 3
     MODEL_MODE = 'RNN' # 'RNN' or 'CNN'
-    conv_out_ch = 200  # for the CNN model:
+    conv_out_ch = 100  # for the CNN model:
     filter_sizes = [3, 4, 5]  # for the CNN model:
     SPLIT_RATIO = 0.85 # ratio of the train set, 1.0 means 100% training, 0% valid data
-    EXPERIMENT_NAME = "Adam_lr" + str(lr) + "_max_vocab_size" + str(MAX_VOCAB_SIZE)
+    EXPERIMENT_NAME = "exp1"
 
     if RESUME == True:
         params = open_experiment(EXPERIMENT_NAME)
@@ -446,11 +446,11 @@ def prediction_time(start_time, end_time):
 
 if __name__ == '__main__':
     # delete_experiment("new_october_CNN")
-    # main_train()
+    main_train()
     # main_test()
     # main_manual_predict(prediction_mode='Manualpart2')
     # main_reply_predict('philipp')
     # main_train_postreply()
     # main_test_postreply()
     # test_every_epoch()
-    main_ensemble_test_postreply()
+    # main_ensemble_test_postreply()
